@@ -9,7 +9,7 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: 'us-east-2'
+  region: 'eu-north-1'
   app: 'recruitment-api'
   env: 'Recruitmentapi-env'
   access_key_id: $AWS_ACCESS_KEY_ID

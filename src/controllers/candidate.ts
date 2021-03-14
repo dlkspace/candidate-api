@@ -70,19 +70,20 @@ export class CandidateController {
 
   async update(ctx: Context, id: string, body: Event) {
     try {
+      const updatedAt = Date.now();
       const params = {
         TableName,
         Item: {
           pk: id,
           sk: 'meta',
           ...body,
-          updatedAt: Date.now(),
+          updatedAt,
         },
       };
 
       await db.put(params as PutItemInput);
 
-      return response(ctx, StatusCodes.OK, body);
+      return response(ctx, StatusCodes.OK, {...body, updatedAt});
     } catch (error) {
       return errorResponse(ctx, error.statusCode);
     }

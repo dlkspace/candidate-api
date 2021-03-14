@@ -1,11 +1,13 @@
-FROM node:12.18-alpine3.12
+FROM node:alpine as builder
 
-COPY $PWD /home/node/app
+WORKDIR /app
 
-WORKDIR /home/node/app
+COPY package.json .
 
-RUN yarn install --prod;
+RUN npm install
+
+COPY . .
+
+CMD ["npm" ,"run", "start"]
 
 EXPOSE 8626
-
-CMD ["node", "yarn start"]

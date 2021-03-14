@@ -10,9 +10,9 @@ COPY package.json /app
 
 COPY . /app
 
-RUN npm install
+RUN yarn
 
-RUN npm run build
+RUN yarn run build
 
 EXPOSE 8626
 

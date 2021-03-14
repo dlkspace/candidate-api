@@ -1,17 +1,13 @@
-FROM node:12.4-alpine
-
-RUN mkdir /app
+FROM node:alpine as builder
 
 WORKDIR /app
 
-COPY package.json /app
-
-COPY . /app
+COPY package.json .
 
 RUN npm install
 
-RUN npm run build
+COPY . .
 
-CMD [ "node", "dist/app.js" ]
+CMD ["npm" ,"run", "start"]
 
 EXPOSE 8626

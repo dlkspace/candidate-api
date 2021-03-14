@@ -1,13 +1,19 @@
 FROM node:alpine as builder
 
+RUN apk update
+
+RUN mkdir /app
+
 WORKDIR /app
 
-COPY package.json .
+COPY package.json /app
+
+COPY . /app
 
 RUN npm install
 
-COPY . .
-
-CMD ["npm" ,"run", "start"]
+RUN npm run build
 
 EXPOSE 8626
+
+CMD [ "node", "dist/app.js" ]

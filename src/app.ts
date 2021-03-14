@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const PORT = process.env.PORT || 8626;
+const PORT = 8626;
 const app = new Koa();
 
 app

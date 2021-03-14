@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc",
-    "start": "nodemon src/app.ts"
+    "dev": "export PORT=5000 && ts-node-dev src/app.ts",
+    "start": "export NODE_ENV=production && ts-node src/app.ts"
   },
   "author": "Daniel Lind Karlberg",
   "license": "ISC",

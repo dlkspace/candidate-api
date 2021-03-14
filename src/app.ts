@@ -2,8 +2,11 @@ import Koa from 'koa';
 import cors from '@koa/cors';
 import bodyParser from 'koa-bodyparser';
 import { router } from './routes';
+import * as dotenv from 'dotenv';
 
-const PORT = 8626;
+dotenv.config();
+
+const PORT = process.env.PORT || 8626;
 const app = new Koa();
 
 app

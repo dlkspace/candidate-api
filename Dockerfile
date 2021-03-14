@@ -6,6 +6,6 @@ WORKDIR /home/node/app
 
 RUN yarn install --prod;
 
-EXPOSE 80
+EXPOSE 8626
 
 CMD ["node", "yarn start"]

@@ -14,6 +14,5 @@ export enum Step {
   CONTACT = 'contact',
   DIALOGUE = 'dialogue',
   INTERVIEW = 'interview',
-  OFFER = 'offer',
   COMPLETED = 'completed',
 }

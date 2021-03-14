@@ -11,7 +11,6 @@ export interface Candidate {
 }
 
 export enum Step {
-  NONE = 'none',
   CONTACT = 'contact',
   DIALOGUE = 'dialogue',
   INTERVIEW = 'interview',
